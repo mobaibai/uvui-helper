@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "outDir": "dist",
+    "lib": ["ESNext"],
+    "sourceMap": true,
+    "baseUrl": ".",
+    "strict": true /* 启用所有严格的类型检查选项 */,
+    "noImplicitAny": false,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "esModuleInterop": true /* 通过为所有导入创建命名空间对象，可以在Common JS和ES模块之间发出互操作性。 暗示“允许合成默认导入”。 */,
+    "skipLibCheck": true /* 跳过类型检查声明文件。 */,
+    "forceConsistentCasingInFileNames": true /* 禁止对同一文件不一致的引用。 */
+    /* 额外检查 */
+    // "noImplicitReturns": true, /* 函数中非所有代码路径返回值时出现报告错误。 */
+    // "noFallthroughCasesInSwitch": true, /* 报告交换机语句中的拒绝案例的错误。 */
+    // "noUnusedParameters": true,  /* 报告未使用参数的错误。 */
+  },
+  "include": ["./src/**/*.ts", "./typings/**/*.ts"],
+  "exclude": ["node_modules", ".vscode-test"]
+}

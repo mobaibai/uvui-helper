@@ -1,0 +1,252 @@
+{
+  // 边界工具
+  "$u.os": {
+    "prefix": "$u.os",
+    "body": "\\$u.os()",
+    "description": "os() 获取平台的名称"
+  },
+  "$u.sys": {
+    "prefix": "$u.sys",
+    "body": "\\$u.sys()",
+    "description": "sys() 获取设备的信息"
+  },
+  "$u.platform": {
+    "prefix": "$u.platform",
+    "body": "\\$u.platform",
+    "description": "platform 获取当前运行的平台名称"
+  },
+  "$u.range": {
+    "prefix": "$u.range",
+    "body": "\\$u.range(${1:min}, ${2:max}, ${3:value})",
+    "description": "range(min, max, value) 限制value的大小"
+  },
+  "$u.getPx": {
+    "prefix": "$u.getPx",
+    "body": "\\$u.getPx(${1:value}, ${2:true})",
+    "description": "getPx(value [, unit = false]) 返回带单位的值的数值结果"
+  },
+  "$u.sleep": {
+    "prefix": "$u.sleep",
+    "body": ["\\$u.sleep(${1:value}).then(_ => {", "\t$2", "})"],
+    "description": "sleep(value) 延时一定时间进行回调"
+  },
+  "$u.$parent.call": {
+    "prefix": "$u.$parent.call",
+    "body": "\\$u.\\$parent.call(${1:this}${2:, 'page'})",
+    "description": "$parent.call(instance [, name]) 在组件中向上获取父组件或者页面的实例"
+  },
+  "$u.page": {
+    "prefix": "$u.page",
+    "body": "\\$u.page()",
+    "description": "page() 获取当前页面的路径，返回的路径以/开头"
+  },
+  "$u.pages": {
+    "prefix": "$u.pages",
+    "body": "\\$u.pages()",
+    "description": "pages() 获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面"
+  },
+
+  // 工具库
+
+  // 节流防抖
+  "$u.throttle": {
+    "prefix": "$u.throttle",
+    "body": "\\$u.throttle(${1:func}${2:, wait = 500}${3:, immediate = true})",
+    "description": "throttle 节流"
+  },
+  "$u.debounce": {
+    "prefix": "$u.debounce",
+    "body": "\\$u.debounce(${1:func}${2:, wait = 500}${3:, immediate = false})",
+    "description": "debounce 防抖"
+  },
+  "$u.deepClone": {
+    "prefix": "$u.deepClone",
+    "body": "\\$u.deepClone(${1:{}})",
+    "description": "deepClone 对象深度克隆"
+  },
+  "$u.deepMerge": {
+    "prefix": "$u.deepMerge",
+    "body": "\\$u.deepMerge(${1:{}}, ${2:{}})",
+    "description": "getProperty(object, key) 对象深度合并"
+  },
+  "$u.getProperty": {
+    "prefix": "$u.getProperty",
+    "body": "\\$u.getProperty(${1:object}, ${2:key})",
+    "description": "deepMerge 链式读取对象属性"
+  },
+  "$u.setProperty": {
+    "prefix": "$u.setProperty",
+    "body": "\\$u.setProperty(${1:object}, ${2:key})",
+    "description": "deepMerge 链式设置对象属性"
+  },
+  "$u.timeFormat": {
+    "prefix": "$u.timeFormat",
+    "body": "\\$u.timeFormat(${1:timestamp}${2:, 'yyyy-mm-dd'})",
+    "description": "timeFormat 格式化时间"
+  },
+  "$u.timeFrom": {
+    "prefix": "$u.timeFrom",
+    "body": "\\$u.timeFrom(${1:timestamp})",
+    "description": "timeFrom 多久以前"
+  },
+  "$u.route": {
+    "prefix": "$u.route",
+    "body": ["\\$u.route({", "\turl: '${1:pages/components/empty/index}'", "\tparams: {", "\t\t$2", "\t}", "})"],
+    "description": "route 路由跳转"
+  },
+  "$u.randomArray": {
+    "prefix": "$u.randomArray",
+    "body": "\\$u.randomArray(${1:[]})",
+    "description": "randomArray 数组乱序"
+  },
+  "$u.guid": {
+    "prefix": "$u.guid",
+    "body": "\\$u.guid(${1:32})",
+    "description": "guid 全局唯一标识符"
+  },
+  "$u.rgbToHex": {
+    "prefix": "$u.rgbToHex",
+    "body": "\\$u.rgbToHex(${1:rgb})",
+    "description": "rgbToHex RGB转十六进制Hex"
+  },
+  "$u.hexToRgb": {
+    "prefix": "$u.hexToRgb",
+    "body": "\\$u.hexToRgb(${1:hex})",
+    "description": "hexToRgb 十六进制Hex转RGB"
+  },
+  "$u.colorGradient": {
+    "prefix": "$u.colorGradient",
+    "body": "\\$u.colorGradient(${1:startColor}, ${2:endColor}, ${3:step})",
+    "description": "colorGradient 颜色渐变"
+  },
+  "$u.colorToRgba": {
+    "prefix": "$u.colorToRgba",
+    "body": "\\$u.colorToRgba(${1:color}, ${2:opacity = 0.3})",
+    "description": "colorToRgba 颜色透明度"
+  },
+  "$u.color": {
+    "prefix": "$u.color",
+    "body": "\\$u.color[${1:'primary'}]",
+    "description": "color 颜色值"
+  },
+  "$u.queryParams": {
+    "prefix": "$u.queryParams",
+    "body": "\\$u.queryParams(${1:objectData})",
+    "description": "queryParams 对象转URL参数"
+  },
+  "$u.test.code": {
+    "prefix": "$u.test.code",
+    "body": "\\$u.test.code(${1:value}${2, len=6})",
+    "description": "test.code 是否验证码"
+  },
+  "$u.test.array": {
+    "prefix": "$u.test.array",
+    "body": "\\$u.test.array(${1:array})",
+    "description": "test.array 是否数组"
+  },
+  "$u.test.jsonString": {
+    "prefix": "$u.test.jsonString",
+    "body": "\\$u.test.jsonString(${1:'jsonString'})",
+    "description": "test.jsonString 是否Json字符串"
+  },
+  "$u.test.object": {
+    "prefix": "$u.test.object",
+    "body": "\\$u.test.object(${1:obj})",
+    "description": "test.object 是否对象"
+  },
+  "$u.test.email": {
+    "prefix": "$u.test.email",
+    "body": "\\$u.test.email(${1:'emailString'})",
+    "description": "test.email 是否邮箱号"
+  },
+  "$u.test.mobile": {
+    "prefix": "$u.test.mobile",
+    "body": "\\$u.test.mobile(${1:'13566669999'})",
+    "description": "test.mobile 是否手机号"
+  },
+  "$u.test.url": {
+    "prefix": "$u.test.url",
+    "body": "\\$u.test.url(${1:'http://www.xx.com'})",
+    "description": "test.url 是否URL"
+  },
+  "$u.test.isEmpty": {
+    "prefix": "$u.test.isEmpty",
+    "body": "\\$u.test.isEmpty($1)",
+    "description": "test.isEmpty 是否为空"
+  },
+  "$u.test.date": {
+    "prefix": "$u.test.date",
+    "body": "\\$u.test.date(${1:'2022'})",
+    "description": "test.date 是否普通日期"
+  },
+  "$u.test.number": {
+    "prefix": "$u.test.number",
+    "body": "\\$u.test.number(${1:'2022'})",
+    "description": "test.number 是否十进制数值"
+  },
+  "$u.test.digits": {
+    "prefix": "$u.test.digits",
+    "body": "\\$u.test.digits(${1:'2022'})",
+    "description": "test.digits 是否整数"
+  },
+  "$u.test.idCard": {
+    "prefix": "$u.test.idCard",
+    "body": "\\$u.test.idCard(${1:'110101199003070134'})",
+    "description": "test.idCard 是否身份证号"
+  },
+  "$u.test.carNo": {
+    "prefix": "$u.test.carNo",
+    "body": "\\$u.test.carNo(${1:'京A88888'})",
+    "description": "test.carNo 是否车牌号"
+  },
+  "$u.test.amount": {
+    "prefix": "$u.test.amount",
+    "body": "\\$u.test.amount(${1:'3,233.08'})",
+    "description": "test.amount 是否金额"
+  },
+  "$u.test.chinese": {
+    "prefix": "$u.test.chinese",
+    "body": "\\$u.test.chinese(${1:'更上一层楼'})",
+    "description": "test.chinese 是否汉字"
+  },
+  "$u.test.letter": {
+    "prefix": "$u.test.letter",
+    "body": "\\$u.test.letter(${1:'uView'})",
+    "description": "test.letter 是否字母"
+  },
+  "$u.test.enOrNum": {
+    "prefix": "$u.test.enOrNum",
+    "body": "\\$u.test.enOrNum(${1:'uView'})",
+    "description": "test.enOrNum 是否字母或者数字"
+  },
+  "$u.test.contains": {
+    "prefix": "$u.test.contains",
+    "body": "\\$u.test.contains(${1:'str'}, ${2:'subStr'})",
+    "description": "test.contains 是否包含某个值"
+  },
+  "$u.test.range": {
+    "prefix": "$u.test.range",
+    "body": "\\$u.test.range(${1:25}, ${2:[10, 30]})",
+    "description": "test.range 数值是否在某个范围内"
+  },
+  "$u.test.rangeLength": {
+    "prefix": "$u.test.rangeLength",
+    "body": "\\$u.test.rangeLength(${1:'abc'}, ${2:[3, 10]})",
+    "description": "test.rangeLength 字符串长度是否在某个范围内"
+  },
+  "$u.random": {
+    "prefix": "$u.random",
+    "body": "\\$u.random(${1:1}, ${2:10}))",
+    "description": "random 随机数值"
+  },
+  "$u.trim": {
+    "prefix": "$u.trim",
+    "body": "\\$u.trim(${1:'abc  b '}, ${2:'both'})",
+    "description": "trim 去除空格"
+  },
+  "$u.getRect": {
+    "prefix": "$u.getRect",
+    "body": "\\$u.getRect($1)",
+    "description": "getRect 节点布局信息"
+  }
+}

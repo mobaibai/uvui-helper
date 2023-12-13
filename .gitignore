@@ -1,0 +1,9 @@
+out
+dist
+node_modules
+.vscode-test/
+.VSCodeCounter/
+*.vsix
+*.lock
+.DS_Store
+pnpm-lock.yaml
